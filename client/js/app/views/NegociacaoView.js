@@ -27,6 +27,12 @@ class NegociacaoView {
                 }).join('')}
             </tbody>
             <tfoot>
+                <td colspan="3"></td>
+                <td>${
+                    negociacoesList.negociacoes.reduce((total, negociacao) => {
+                        return total + negociacao.volume;
+                    }, 0.0)
+                }</td>
             </tfoot>
         </table>
         `;
